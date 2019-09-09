@@ -1,0 +1,3 @@
+[submodule "submodules/DemoLibrary"]
+	path = submodules/DemoLibrary
+	url = git@github.com:YK-Unit/git_submodule_version_checker_example_DemoLibrary.git
