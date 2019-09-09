@@ -39,7 +39,7 @@ function check_submodules_version()
 		color_right=$color_prefix_red"[✓]"$color_suffix
 		color_wrong=$color_prefix_red"[✗]"$color_suffix
 
-		if [ -z "$submodules_associated_commit_id"]
+		if [ -z "$submodules_associated_commit_id" ]
 		then
 			echo "$color_tips $submodule_name: a new submodule, and is waiting to be committed"
 		else
