@@ -6,10 +6,12 @@ function check_submodules_version()
 	color_prefix_red="\033[0;31m"
 	color_suffix="\033[0m"
 
-	echo "check the version of submodules now ..."
-
 	project_dir=$1
-	#echo $project_dir
+	cd $project_dir
+	color_project_dir=$color_prefix_red$project_dir$color_suffix
+	echo "cd to repo '$color_project_dir' done"
+
+	echo "check the version of submodules now ..."
 
 	cur_branch=$(git symbolic-ref --short -q HEAD)
 	#echo "current branch: $cur_branch"
@@ -26,6 +28,13 @@ function check_submodules_version()
 	    	printf("submodules_head_commit_id=%s; submodule_name=%s", $1, $2)
 		}'`
 		#echo "$submodule_name: $submodules_head_commit_id" 
+
+		# gradle 执行 'git submodule status' 时，submodule_name 前面带有 '../'，非常奇怪
+		# 这个正是用于删除 '../'
+		if [[ $submodule_name == ../* ]]
+		then
+			submodule_name=${submodule_name:3}
+		fi
 
 		submodule_path="$project_dir/$submodule_name"
 		eval `git ls-tree $cur_branch $submodule_path  | awk '{
