@@ -1,5 +1,5 @@
 # git_submodule_version_checker_example_iOS
-A example to show how an iOS project install git_submodule_version_checker tool,  and as a test demo for you.
+A example to show how an iOS project install [git_submodule_version_checker](https://github.com/YK-Unit/git_submodule_version_checker) tool,  and as a test demo for you.
 
 
 
