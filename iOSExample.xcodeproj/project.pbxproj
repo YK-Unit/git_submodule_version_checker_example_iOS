@@ -148,7 +148,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "root_dir=$SRCROOT\nsh $root_dir/script/git_submodule_version_checker.sh $root_dir\nif [ $? != 0 ]\nthen \necho \"error: This main repo has bad submodules, please run 'git submodule update --init --recursive' to fix it\" >&2\nexit 1\nfi\necho \"SUCCESS\"\n";
+			shellScript = "root_dir=$SRCROOT\nsh $root_dir/git_submodule_version_checker/git_submodule_version_checker.sh $root_dir\nif [ $? != 0 ]\nthen \necho \"error: This main repo has bad submodules, please run 'git submodule update --init --recursive' to fix it\" >&2\nexit 1\nfi\necho \"SUCCESS\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
